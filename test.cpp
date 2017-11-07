@@ -178,9 +178,36 @@ bool test::removeBackCp(LinkedListOfInts test){
 }
 std::string test::removeBackWAE(){
   std::string returner = "\n-+-+- removeBackWAE -+-+-\n";
-  /*case 1: empty list*/
+  /*case 1: list 0 to 14*/
   LinkedListOfInts tester;
-
+  for (int i = 0; i < 15; i++) {
+    tester = addFrontCp(tester, i);
+  }
+  bool hold1 = tester.removeBack();
+  std::vector<int> vectorTester = tester.toVector();
+  //from stackoverflow
+  //stackoverflow.com/questions/10750057/how-to-print-out-the-contents-of-a-vector
+  int k = 0;
+  int m;
+  bool store = 1;
+  for(std::vector<int>::const_iterator j = vectorTester.begin(); j != vectorTester.end(); j++) {
+    m = *j;
+    std::cout<<m<<" ";
+    store &= (m==k);
+    k++;
+  }
+  if(!store) {
+    returner += "ERROR! -+-+- removeBack is not working properly.\n";
+  }
+  if(!hold1) {
+    returner += "ERROR! -+-+- removeBack has returned false.\n";
+  }
+  if(tester.size()!= 14) {
+    returner += "ERROR! -+-+- removeBack has wrong size.\n";
+  }
+  if(tester.size()== 15) {
+    returner += "ERROR! -+-+- removeBack has original size.\n";
+  }
   return returner;
 }
 
@@ -189,9 +216,36 @@ bool test::removeFrontCp(LinkedListOfInts test){
 }
 std::string test::removeFrontWAE(){
   std::string returner = "\n-+-+- removeFrontWAE -+-+-\n";
-  /*case 1: empty list*/
+  /*case 1: list 0 to 14*/
   LinkedListOfInts tester;
-
+  for (int i = 0; i < 15; i++) {
+    tester = addFrontCp(tester, i);
+  }
+  bool hold1 = tester.removeFront();
+  std::vector<int> vectorTester = tester.toVector();
+  //from stackoverflow
+  //stackoverflow.com/questions/10750057/how-to-print-out-the-contents-of-a-vector
+  int k = 13;
+  int m;
+  bool store = 1;
+  for(std::vector<int>::const_iterator j = vectorTester.begin(); j != vectorTester.end(); j++) {
+    m = *j;
+    std::cout<<m;
+    store &= (m==k);
+    k--;
+  }
+  if(!store) {
+    returner += "ERROR! -+-+- removeFront is not working properly.\n";
+  }
+  if(!hold1) {
+    returner += "ERROR! -+-+- removeFront has returned false.\n";
+  }
+  if(tester.size()!= 14) {
+    returner += "ERROR! -+-+- removeFront has wrong size.\n";
+  }
+  if(tester.size()== 15) {
+    returner += "ERROR! -+-+- removeFront has original size.\n";
+  }
   return returner;
 }
 

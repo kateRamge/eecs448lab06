@@ -1,0 +1,7 @@
+isEmpty      -> returns true regardless of if it is empty or not
+size         -> works properly
+search       -> works properly
+addBack      -> does not add in the back (actually adds in the front)
+addFront     -> works properly
+removeBack   -> does not remove anything and does not decrease the size
+removeFront  -> does not remove anything and does not decrease the size
